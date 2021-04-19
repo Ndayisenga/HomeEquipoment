@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "MY LOVELY HOME DEVICES"
+        title = "MY HOME DEVICES"
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource =  self
@@ -61,6 +61,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let item = items[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = item.title
+        cell.textLabel?.textColor = .blue
+        cell.textLabel?.textAlignment = .justified
         cell.accessoryType = item.isChecked ?.checkmark: .none
         return cell
     }
